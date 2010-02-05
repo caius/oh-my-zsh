@@ -1,0 +1,117 @@
+#!/bin/zsh
+
+# Textmate
+alias bundle='cd /Library/Application\ Support/TextMate/ && svn up'
+alias mman='"/Library/Application Support/TextMate/Bundles/Man Pages.tmbundle/Support/mman"'
+
+# SSH stuff
+alias ssht='ssh -D 8080 -f -C -q -N'
+
+## Rails stuff
+alias sc='script/console'
+alias etest='RAILS_ENV=test'
+alias ecuke='RAILS_ENV=cucumber'
+alias estaging='RAILS_ENV=staging'
+alias sproduction='RAILS_ENV=production'
+
+alias gvg='grep -v grep'
+
+alias rc='mate ~/.zshrc ~/.oh-my-zsh; mate ~/.oh-my-zsh/custom/aliases.zsh'
+alias so='source ~/.zshrc && echo "Sourced ~/.zshrc"'
+alias sshc='mate -w ~/.ssh/config'
+alias irbrc='mate -w ~/.irbrc'
+alias gitrc='mate -w ~/.gitconfig'
+
+# alias nt="iterm_clone_tab"
+alias nt="terminal_clone_tab"
+
+alias cur='clear && pwd && ls'
+
+## Top Stuff
+alias cpu='top -o cpu'
+alias ram='top -o rsize'
+
+# Encrypted disk images
+alias cl="open_and_cd_to_disk_image Clients"
+alias bb="open_and_cd_to_disk_image Brightbox && cd src"
+alias pp="open_and_cd_to_disk_image Projects"
+
+alias same='open .'
+
+## My nifty stuff for copying/pasting dir paths
+alias copypath='echo `pwd` | pbcopy'
+alias cdpath='cd "`pbpaste`"'
+
+
+## Textmate alias'
+alias mate='/Users/caius/bin/mate -r'
+alias m='mate -r'
+alias matew='mate -rw'
+alias mw='mate -rw'
+alias m.='mate .'
+
+# XcodeBuild with network builds
+alias buildNetwork='xcodebuild build -bonjourbuildhosts -project '
+alias buildLocal='xcodebuild build  -project '
+# Open xcode projects named after the folder you're in
+alias xcode='open `pwd | sed -e "s/^\/.*\///g"`.xcodeproj'
+
+# General ones
+alias scn='svn'
+alias df='df -Hl'
+alias mktar='tar -cvf'
+alias mkbz2='tar -cvjf'
+alias mkgz='tar -cvzf'
+alias untar='tar -xvf'
+alias unbz2='tar -xvjf'
+alias ungz='tar -xvzf'
+alias mv='mv -i'
+alias cp='cp -i'
+#alias rm='rm -i'
+
+alias dnsflush='dscacheutil -flushcache'
+
+# Git alias'
+alias bitx='gitx'
+alias gc='m ~/.gitconfig'
+alias ghit='git'
+alias bit='git'
+alias got='git'
+alias gut='git'
+alias gti='git'
+alias gtu='git'
+alias gto='git'
+alias giot='git'
+alias hit='git'
+alias tgit='git'
+alias tgi='git'
+alias gt='git'
+alias gi='git'
+alias it='git'
+alias g='git'
+alias t='git'
+alias ggit='git'
+alias fit='git'
+alias igt='git'
+alias ti='git'
+alias tit='git'
+alias gits='git'
+
+alias gitst='git st'
+alias gtst='git st'
+
+alias gme='gem'
+
+alias rkae='rake'
+
+alias culerity='irb -rculerity-boot'
+alias celerity='jruby -S irb -rcelerity-boot'
+
+alias mysqlstart='sudo mysqld_safe5 &'
+alias mysqlstop='mysqladmin5 -u root -p shutdown'
+alias sqlite='sqlite3'
+
+# ZSH nocorrect's
+alias aping='nocorrect aping'
+alias port='nocorrect port'
+alias brew='nocorrect brew'

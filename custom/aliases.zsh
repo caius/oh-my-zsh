@@ -9,6 +9,7 @@ alias ssht='ssh -D 8080 -f -C -q -N'
 
 ## Rails stuff
 alias sc='script/console'
+alias edev='RAILS_ENV=development'
 alias etest='RAILS_ENV=test'
 alias ecuke='RAILS_ENV=cucumber'
 alias estaging='RAILS_ENV=staging'
@@ -108,8 +109,11 @@ alias culerity='irb -rculerity-boot'
 alias celerity='jruby -S irb -rcelerity-boot'
 
 alias mysqlstart='sudo mysqld_safe5 &'
-alias mysqlstop='mysqladmin5 -u root -p shutdown'
+alias mysqlstop='mysqladmin -u root -p shutdown'
 alias sqlite='sqlite3'
+
+alias postgresstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias postgresstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 # ZSH nocorrect's
 alias aping='nocorrect aping'

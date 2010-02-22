@@ -1,17 +1,40 @@
-# # Path
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin"
-export PATH="/opt/local/bin:$PATH" # MacPorts bin
-export PATH="/opt/local/sbin:$PATH" # MacPorts sbin
-# export PATH="/opt/local/apache2/bin:$PATH" # Apache2
-export PATH="$PATH:/Users/caius/bin" # Local Stuff
-# export PATH="$PATH:/usr/local/bin:/usr/local/sbin" # /usr/local
-export PATH="$PATH:/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin" # iplayer
-# # Not quite sure why I need these:
-# export PATH="$PATH:/Developer/usr/bin"
-# export PATH="$PATH:/Developer/usr/sbin"
+function setup_user_path {
+  NEW_PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
+  if [[ $DISABLE_MACPORTS == false ]]; then
+    NEW_PATH="/opt/local/bin:/opt/local/sbin:$NEW_PATH"
+  fi
+  NEW_PATH="/usr/local/bin:/usr/local/sbin:$NEW_PATH" # Homebrew s/bin - make sure it comes first
 
-export MANPATH="/opt/local/share/man:$MANPATH" # macports man path
-export MANPATH="/Users/caius/man:$MANPATH"
+  # # Extra stuff, added to the end of the path
+  NEW_PATH="$NEW_PATH:/Users/caius/bin" # Local Stuff
+
+  export PATH=$NEW_PATH
+}
+
+function setup_user_man_paths {
+  NEW_PATH=
+  if [[ $DISABLE_MACPORTS == false ]]; then
+    NEW_PATH="/opt/local/share/man" # macports man path
+  fi
+  NEW_PATH="/Users/caius/man:$NEW_PATH"
+
+  export MANPATH=$NEW_PATH
+}
+
+function disable_macports {
+  export DISABLE_MACPORTS=true
+  setup_user_path
+  setup_user_man_paths
+}
+
+function enable_macports {
+  export DISABLE_MACPORTS=false
+  setup_user_path
+  setup_user_man_paths
+}
+
+# Sets up our usual $[MAN]PATH for us too
+enable_macports
 
 export RUBYOPT=rubygems
 export JEWELER_OPTS="--rspec"

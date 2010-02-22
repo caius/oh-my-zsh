@@ -107,3 +107,11 @@ function git {
     $GIT $*
   fi
 }
+
+
+# Removes macports from the $PATH before installing anything with homebrew
+function brew {
+  disable_macports
+  /usr/local/bin/brew $*
+  enable_macports
+}

@@ -108,7 +108,7 @@ alias rkae='rake'
 alias culerity='irb -rculerity-boot'
 alias celerity='jruby -S irb -rcelerity-boot'
 
-alias mysqlstart='sudo mysqld_safe5 &'
+alias mysqlstart='sudo mysqld_safe &'
 alias mysqlstop='mysqladmin -u root -p shutdown'
 alias sqlite='sqlite3'
 

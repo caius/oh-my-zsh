@@ -115,3 +115,15 @@ function brew {
   /usr/local/bin/brew $*
   enable_macports
 }
+
+# Lets you call `rake features` or `rake features FEATURE=` easily to specify running either one or all of your cucumber tests.
+# USAGE: `rf` runs everything
+#        `rf features/foo.feature` runs just foo.features
+#        `rf features/foo.feature:12` runs the scenario on line 12 of foo.features
+function rf {
+  if [[ -z "$1" ]]; then
+    rake features
+  else
+    rake features FEATURE="$1"
+  fi
+}

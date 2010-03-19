@@ -12,9 +12,9 @@ function setup_user_path {
 }
 
 function setup_user_man_paths {
-  NEW_PATH=
+  NEW_PATH="/usr/share/man:/usr/local/share/man:/usr/X11/man"
   if [[ $DISABLE_MACPORTS == false ]]; then
-    NEW_PATH="/opt/local/share/man" # macports man path
+    NEW_PATH="/opt/local/share/man:$NEW_PATH" # macports man path
   fi
   NEW_PATH="/Users/caius/man:$NEW_PATH"
 

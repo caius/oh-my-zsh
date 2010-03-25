@@ -8,8 +8,8 @@ unsetopt flowcontrol
 
 WORDCHARS=''
 
-autoload -U compinit
-compinit
+autoload -U compinit -u
+compinit -u
 
 zmodload -i zsh/complist
 

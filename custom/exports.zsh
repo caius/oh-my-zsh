@@ -47,14 +47,14 @@ export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export LC_CTYPE=en_US.UTF-8
 export LANG=en_GB.UTF-8
 
-export SVN_EDITOR="mate -wl1"
-export HGEDITOR="mate -wl1"
-export GIT_EDITOR="mate -wl1"
-export EDITOR='mate'
+export SVN_EDITOR="nano"
+export HGEDITOR="nano"
+export GIT_EDITOR="nano"
+export EDITOR='nano'
 
 export PYTHONPATH=/usr/local/lib/python2.6/site-packages
 
-export MAKEFLAGS='-j4'
+export MAKEFLAGS='-j1'
 
 # Twitter performance tweaks for REE
 export RUBY_HEAP_MIN_SLOTS=500000

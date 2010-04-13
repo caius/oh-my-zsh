@@ -59,7 +59,7 @@ function ree () {
 function cap {
   CAP="/usr/bin/cap"
   if [[ "$1" == "deploy" || "$2" == "deploy" ]]; then
-    git push && $CAP deploy
+    git push && $CAP $*
   else
     $CAP $*
   fi

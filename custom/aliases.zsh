@@ -13,7 +13,7 @@ alias edev='RAILS_ENV=development'
 alias etest='RAILS_ENV=test'
 alias ecuke='RAILS_ENV=cucumber'
 alias estaging='RAILS_ENV=staging'
-alias sproduction='RAILS_ENV=production'
+alias eproduction='RAILS_ENV=production'
 
 alias gvg='grep -v grep'
 

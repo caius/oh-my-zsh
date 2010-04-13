@@ -75,6 +75,7 @@ alias cp='cp -i'
 alias dnsflush='dscacheutil -flushcache'
 
 # Git alias'
+alias git="nocorrect git"
 alias bitx='gitx'
 alias gc='m ~/.gitconfig'
 alias ghit='git'

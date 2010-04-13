@@ -1,8 +1,7 @@
 #!/bin/zsh
 
 # Textmate
-alias bundle='cd /Library/Application\ Support/TextMate/ && svn up'
-alias mman='"/Library/Application Support/TextMate/Bundles/Man Pages.tmbundle/Support/mman"'
+alias mman='man'
 
 # SSH stuff
 alias ssht='ssh -D 8080 -f -C -q -N'
@@ -17,14 +16,10 @@ alias eproduction='RAILS_ENV=production'
 
 alias gvg='grep -v grep'
 
-alias rc='mate ~/.zshrc ~/.oh-my-zsh; mate ~/.oh-my-zsh/custom/aliases.zsh'
 alias so='source ~/.zshrc && echo "Sourced ~/.zshrc"'
-alias sshc='mate -w ~/.ssh/config'
-alias irbrc='mate -w ~/.irbrc'
-alias gitrc='mate -w ~/.gitconfig'
-
-# alias nt="iterm_clone_tab"
-alias nt="terminal_clone_tab"
+alias sshc='nano ~/.ssh/config'
+alias irbrc='nano ~/.irbrc'
+alias gitrc='nano ~/.gitconfig'
 
 alias cur='clear && pwd && ls'
 
@@ -32,17 +27,11 @@ alias cur='clear && pwd && ls'
 alias cpu='top -o cpu'
 alias ram='top -o rsize'
 
-# Encrypted disk images
-alias cl="open_and_cd_to_disk_image Clients"
-alias bb="open_and_cd_to_disk_image Brightbox && cd src"
-alias pp="open_and_cd_to_disk_image Projects"
-
 alias same='open .'
 
 ## My nifty stuff for copying/pasting dir paths
 alias copypath='echo `pwd` | pbcopy'
 alias cdpath='cd "`pbpaste`"'
-
 
 ## Textmate alias'
 alias mate='/Users/caius/bin/mate -r'
@@ -108,17 +97,9 @@ alias gme='gem'
 
 alias rkae='rake'
 
-alias culerity='irb -rculerity-boot'
-alias celerity='jruby -S irb -rcelerity-boot'
-
 alias js="java org.mozilla.javascript.tools.shell.Main"
 
-alias mysqlstart='sudo mysqld_safe &'
-alias mysqlstop='mysqladmin -u root -p shutdown'
 alias sqlite='sqlite3'
-
-alias postgresstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-alias postgresstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 # ZSH nocorrect's
 alias aping='nocorrect aping'

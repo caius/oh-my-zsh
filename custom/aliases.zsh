@@ -55,7 +55,9 @@ alias m.='mate .'
 alias buildNetwork='xcodebuild build -bonjourbuildhosts -project '
 alias buildLocal='xcodebuild build  -project '
 # Open xcode projects named after the folder you're in
-alias xcode='open `pwd | sed -e "s/^\/.*\///g"`.xcodeproj'
+# alias xcode='open `pwd | sed -e "s/^\/.*\///g"`.xcodeproj'
+# Open all .xcodeproj files in the current folder
+alias xcode='open *.xcodeproj'
 
 # General ones
 alias scn='svn'

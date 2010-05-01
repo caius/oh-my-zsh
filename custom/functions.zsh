@@ -57,7 +57,7 @@ function ree () {
 # Runs `git push` before `cap deploy`
 # Otherwise just passes through to `cap`
 function cap {
-  CAP="/usr/bin/cap"
+  CAP=$(whence -p cap)
   if [[ "$1" == "deploy" || "$2" == "deploy" ]]; then
     git push && $CAP $*
   else
@@ -70,7 +70,7 @@ function cap {
 #  * Makes sure you've run your specs/features before pushing
 #  * Asks for confirmation before committing on master
 function git {
-  GIT="/usr/local/bin/git"
+  GIT=$(whence -p git)
   CONTINUE=true
 
   # git push

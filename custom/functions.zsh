@@ -16,7 +16,7 @@ function ding () {
 # Otherwise just passes through to `cap`
 function cap {
   CAP=$(whence -p cap)
-  if [[ "$1" == "deploy" || "$2" == "deploy" ]]; then
+  if [[ "$1" == "deploy" || "$2" == "deploy" || "$3" == "deploy" ]]; then
     git push && $CAP $*
   else
     $CAP $*

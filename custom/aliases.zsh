@@ -14,9 +14,11 @@ alias ecuke='RAILS_ENV=cucumber'
 alias estaging='RAILS_ENV=staging'
 alias eproduction='RAILS_ENV=production'
 
+alias rcap=$(whence -p cap)
+
 alias gvg='grep -v grep'
 
-alias rc='mate ~/.zshrc ~/.oh-my-zsh; mate ~/.oh-my-zsh/custom/aliases.zsh'
+alias rc='mate ~/.zshrc ~/.oh-my-zsh'
 alias so='source ~/.zshrc && echo "Sourced ~/.zshrc"'
 alias sshc='mate -w ~/.ssh/config'
 alias irbrc='mate -w ~/.irbrc'
@@ -123,3 +125,7 @@ alias postgresstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 alias aping='nocorrect aping'
 alias port='nocorrect port'
 alias brew='nocorrect brew'
+alias iplayer="get_iplayer --isodate"
+
+# Override ZSH's built ins
+alias time="$(whence -p time)"

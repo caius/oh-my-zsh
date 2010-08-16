@@ -6,6 +6,12 @@ function ree () {
   rvm use default
 }
 
+# Run the command, and ding when done
+function ding () {
+  $@
+  beep
+}
+
 # Runs `git push` before `cap deploy`
 # Otherwise just passes through to `cap`
 function cap {

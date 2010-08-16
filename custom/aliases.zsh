@@ -14,6 +14,8 @@ alias ecuke='RAILS_ENV=cucumber'
 alias estaging='RAILS_ENV=staging'
 alias eproduction='RAILS_ENV=production'
 
+alias rcap=$(whence -p cap)
+
 alias gvg='grep -v grep'
 
 alias so='source ~/.zshrc && echo "Sourced ~/.zshrc"'
@@ -105,3 +107,7 @@ alias sqlite='sqlite3'
 alias aping='nocorrect aping'
 alias port='nocorrect port'
 alias brew='nocorrect brew'
+alias iplayer="get_iplayer --isodate"
+
+# Override ZSH's built ins
+alias time="$(whence -p time)"

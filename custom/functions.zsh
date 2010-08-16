@@ -133,3 +133,8 @@ function rf {
     rake features FEATURE="$1"
   fi
 }
+
+# Backs up the SMS from my phone
+function backup_phone_sms {
+  scp caesar:Library/SMS/sms.db ~/Archive/SMS/$(date "+%Y-%m-%d-%H:%M").sqlite3
+}

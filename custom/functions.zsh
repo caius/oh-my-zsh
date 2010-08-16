@@ -106,6 +106,26 @@ function git {
       fi
     fi
   fi
+
+  # git checkout
+  # If you pass "-" as the branch name then it attempts to check out the previous
+  # branch you were on, using the contents of .git/previous_branch as the branch name.
+  if [[ "$1" == "checkout" || "$1" == "co" ]]; then
+    # Check if it's 'checkout -' or an actual branch name
+    if [[ "$2" == "-" ]]; then
+      # Don't run 'checkout -'
+      CONTINUE=false
+
+      # Figure it out from the reflog
+      LAST_BRANCH=$(git log -g --oneline | egrep "moving from .*? to $(current_branch)" | head -n1 | awk '{ print $6 }')
+      if [[ "$LAST_BRANCH" != "" ]]; then
+        $GIT checkout $LAST_BRANCH
+      else
+        echo "I'm sorry $USER, I'm afraid I can't do that."
+      fi
+    fi
+  fi
+
   # Run the command if we've been told to.
   # The default is to run the command so this only
   # fires if a check has disabled it.

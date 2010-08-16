@@ -1,7 +1,6 @@
 #!/bin/zsh
 
 # Textmate
-alias bundle='cd /Library/Application\ Support/TextMate/ && svn up'
 alias mman='"/Library/Application Support/TextMate/Bundles/Man Pages.tmbundle/Support/mman"'
 
 # SSH stuff

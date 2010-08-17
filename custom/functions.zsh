@@ -1,3 +1,35 @@
+# ss            # => ./script/server
+# ss 3001       # => ./script/server -p 3001
+# ss test       # => ./script/server -e test
+# ss test 3001  # => ./script/server -e test -p 3001
+function ss {
+  if [[ -z "$1" ]]; then
+    ruby script/server
+  elif [[ -z "$2" ]]; then
+    # Is it a port or an environment?
+    if [[ "$1" =~ [0-9]+ ]]; then
+      # Its a port
+      ruby script/server -p $1
+    else # its an env name
+      ruby script/server -e $1
+    fi
+  else
+    ruby script/server -e $1 -p $2
+  fi
+}
+
+# script/console shortcut
+# 
+# Works with rails 1.x, 2.x and rails 3.x
+# 
+function sc () {
+  if [[ -e "script/console" ]]; then
+    script/console $*
+  else
+    rails console $*
+  fi
+}
+
 # Switch to ree before running the command, then switch
 # back to default
 function ree () {

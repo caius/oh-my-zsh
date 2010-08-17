@@ -1,20 +1,26 @@
-# ss            # => ./script/server
-# ss 3001       # => ./script/server -p 3001
-# ss test       # => ./script/server -e test
-# ss test 3001  # => ./script/server -e test -p 3001
+# ss            # => ./script/server or rails server
+# ss 3001       # => ./script/server -p3001 or rails server -p3001
+# BROKEN: ss test       # => ./script/server -e test
+# BROKEN: ss test 3001  # => ./script/server -e test -p 3001
 function ss {
   if [[ -z "$1" ]]; then
-    ruby script/server
+    SERVER_ARGS=""
   elif [[ -z "$2" ]]; then
     # Is it a port or an environment?
-    if [[ "$1" =~ [0-9]+ ]]; then
+    # if [[ "$1" =~ [0-9]+ ]]; then
       # Its a port
-      ruby script/server -p $1
-    else # its an env name
-      ruby script/server -e $1
-    fi
+      SERVER_ARGS="-p$1"
+    # else # its an env name
+      # SERVER_ARGS="-e $1"
+    # fi
+  # else
+    # SERVER_ARGS="-e $1 -p $2"
+  fi
+
+  if [[ -e "script/server" ]]; then
+    script/server $SERVER_ARGS
   else
-    ruby script/server -e $1 -p $2
+    rails server $SERVER_ARGS
   fi
 }
 

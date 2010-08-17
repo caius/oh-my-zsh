@@ -108,6 +108,7 @@ alias aping='nocorrect aping'
 alias port='nocorrect port'
 alias brew='nocorrect brew'
 alias iplayer="get_iplayer --isodate"
+alias scp="nocorrect scp"
 
 # Override ZSH's built ins
 alias time="$(whence -p time)"

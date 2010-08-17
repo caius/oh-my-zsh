@@ -7,7 +7,6 @@ alias mman='"/Library/Application Support/TextMate/Bundles/Man Pages.tmbundle/Su
 alias ssht='ssh -D 8080 -f -C -q -N'
 
 ## Rails stuff
-alias sc='script/console'
 alias edev='RAILS_ENV=development'
 alias etest='RAILS_ENV=test'
 alias ecuke='RAILS_ENV=cucumber'

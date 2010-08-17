@@ -18,6 +18,19 @@ function ss {
   fi
 }
 
+# script/console shortcut
+# 
+# Works with rails 1.x, 2.x and rails 3.x
+# 
+function sc () {
+  if [[ -e "script/console" ]]; then
+    script/console $*
+  else
+    rails console $*
+  fi
+}
+
+
 ## Encrypted Image stuff
 function open_and_cd_to_disk_image {
   LOCATION="$HOME"

@@ -37,10 +37,10 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-
 zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm -w -w"
 
 # Load known hosts file for auto-completion with ssh and scp commands
-if [ -f ~/.ssh/known_hosts ]; then
-  zstyle ':completion:*' hosts $( sed 's/[, ].*$//' $HOME/.ssh/known_hosts )
-  zstyle ':completion:*:*:(ssh|scp):*:*' hosts `sed 's/^\([^ ,]*\).*$/\1/' ~/.ssh/known_hosts`
-fi
+[[ -f ~/.ssh/known_hosts ]] && hosts=(`awk '{print $1}' ~/.ssh/known_hosts | tr ',' '\n' `)
+# Load hosts from SSH config file for auto-completion with ssh and scp commands
+[[ -f ~/.ssh/config ]] && hosts=($hosts `grep ^Host ~/.ssh/config | sed s/Host\\ // | egrep -v '^\\*$'`)
+[[ ! -z "$hosts" ]] && zstyle ':completion:*:hosts' hosts $hosts
 
 # Complete on history
 #zstyle ':completion:*:history-words' stop yes

@@ -12,6 +12,7 @@ alias etest='RAILS_ENV=test'
 alias ecuke='RAILS_ENV=cucumber'
 alias estaging='RAILS_ENV=staging'
 alias eproduction='RAILS_ENV=production'
+alias eprod="eproduction"
 
 alias rcap=$(whence -p cap)
 

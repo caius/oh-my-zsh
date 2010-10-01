@@ -6,7 +6,7 @@ function git_prompt_info() {
 
 # Get the no of stashes
 parse_git_stash_count () {
-  echo $(git stash list 2> /dev/null | wc -l | sed -Ee 's/^.*([0-9]+).*$/[\1]/' -e 's/\[0\]//') || return
+  echo $(git stash list 2> /dev/null | wc -l | sed -re 's/^.*([0-9]+).*$/[\1]/' -e 's/\[0\]//') || return
 }
 
 parse_git_dirty () {

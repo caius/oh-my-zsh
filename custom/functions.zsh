@@ -36,6 +36,14 @@ function sc () {
   fi
 }
 
+function sg () {
+  if [[ -e "script/generate" ]]; then
+    script/generate $*
+  else
+    echo "Need to implement rails 3 command"
+  fi
+}
+
 # Switch to ree before running the command, then switch
 # back to default
 function ree () {

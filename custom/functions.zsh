@@ -36,6 +36,14 @@ function sc () {
   fi
 }
 
+function sg () {
+  if [[ -e "script/generate" ]]; then
+    script/generate $*
+  else
+    echo "Need to implement rails 3 command"
+  fi
+}
+
 
 ## Encrypted Image stuff
 function open_and_cd_to_disk_image {

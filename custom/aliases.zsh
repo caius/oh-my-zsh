@@ -14,6 +14,8 @@ alias estaging='RAILS_ENV=staging'
 alias eproduction='RAILS_ENV=production'
 alias eprod="eproduction"
 
+alias be="bundle exec"
+
 alias rcap=$(whence -p cap)
 
 alias gvg='grep -v grep'

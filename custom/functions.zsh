@@ -161,14 +161,6 @@ function git {
   fi
 }
 
-
-# Removes macports from the $PATH before installing anything with homebrew
-function brew {
-  disable_macports
-  /usr/local/bin/brew $*
-  enable_macports
-}
-
 # Lets you call `rake features` or `rake features FEATURE=` easily to specify running either one or all of your cucumber tests.
 # USAGE: `rf` runs everything
 #        `rf features/foo.feature` runs just foo.features

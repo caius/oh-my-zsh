@@ -33,10 +33,9 @@ function enable_macports {
   setup_user_man_paths
 }
 
-# Sets up our usual $[MAN]PATH for us too
-enable_macports
+# Sets up our usual $[MAN]PATH for us without macports
+disable_macports
 
-export RUBYOPT=rubygems
 export JEWELER_OPTS="--rspec"
 
 # Make ls and grep coloured

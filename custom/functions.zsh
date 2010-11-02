@@ -75,10 +75,15 @@ function open_and_cd_to_disk_image {
 
 # Switch to ree before running the command, then switch
 # back to default
+# 
+# If no command specified just switches to ree and stays there
 function ree () {
   rvm use ree
-  $@
-  rvm use default
+  if [[ ! -z "$1" ]]; then
+    $@
+    # rvm use default
+    rvm use system
+  fi
 }
 
 # Run the command, and ding when done

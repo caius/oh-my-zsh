@@ -177,3 +177,8 @@ function rf {
 function backup_phone_sms {
   scp caesar:Library/SMS/sms.db ~/Archive/SMS/$(date "+%Y-%m-%d-%H:%M").sqlite3
 }
+
+# Run the command in a subshell so we don't change $PWD
+function mman () {
+  $(cd $HOME && "/Library/Application Support/TextMate/Bundles/Man Pages.tmbundle/Support/mman" $*)
+}

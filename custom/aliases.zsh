@@ -1,8 +1,5 @@
 #!/bin/zsh
 
-# Textmate
-alias mman='"/Library/Application Support/TextMate/Bundles/Man Pages.tmbundle/Support/mman"'
-
 # SSH stuff
 alias ssht='ssh -D 8080 -f -C -q -N'
 

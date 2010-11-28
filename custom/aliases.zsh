@@ -129,3 +129,17 @@ alias scp="nocorrect scp"
 
 # Override ZSH's built ins
 alias time="$(whence -p time)"
+
+# bbcloud cli
+alias bb-accounts="brightbox-accounts"
+alias bb-config="brightbox-config"
+alias bb-servers="brightbox-servers"
+alias bb-srvs="brightbox-servers"
+alias bb-users="brightbox-users"
+alias bb-cloudips="brightbox-cloudips"
+alias bb-cips="brightbox-cloudips"
+alias bb-images="brightbox-images"
+alias bb-imgs="brightbox-images"
+alias bb-types="brightbox-types"
+alias bb-typs="brightbox-types"
+alias bb-zones="brightbox-zones"

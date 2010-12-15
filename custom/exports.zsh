@@ -1,42 +1,7 @@
-function setup_user_path {
-  NEW_PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
-  if [[ $DISABLE_MACPORTS == false ]]; then
-    NEW_PATH="/opt/local/bin:/opt/local/sbin:$NEW_PATH"
-  fi
-  NEW_PATH="/usr/local/bin:/usr/local/sbin:$NEW_PATH" # Homebrew s/bin - make sure it comes first
-
-  # # Extra stuff, added to the end of the path
-  NEW_PATH="$NEW_PATH:/Users/caius/bin" # Local Stuff
-
-  export PATH=$NEW_PATH
-}
-
-function setup_user_man_paths {
-  NEW_PATH="/usr/share/man:/usr/local/share/man:/usr/X11/man"
-  if [[ $DISABLE_MACPORTS == false ]]; then
-    NEW_PATH="/opt/local/share/man:$NEW_PATH" # macports man path
-  fi
-  NEW_PATH="/Users/caius/man:$NEW_PATH"
-
-  export MANPATH=$NEW_PATH
-}
-
-function disable_macports {
-  export DISABLE_MACPORTS=true
-  setup_user_path
-  setup_user_man_paths
-}
-
-function enable_macports {
-  export DISABLE_MACPORTS=false
-  setup_user_path
-  setup_user_man_paths
-}
-
-# Sets up our usual $[MAN]PATH for us without macports
-disable_macports
-
-export JEWELER_OPTS="--rspec"
+# make sure Homebrew s/bin comes first
+export PATH="/Users/caius/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
+# And the same for the manpath
+export MANPATH="/Users/caius/man:/usr/share/man:/usr/local/share/man:/usr/X11/man"
 
 # Make ls and grep coloured
 export CLICOLOR=true
@@ -46,13 +11,16 @@ export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export LC_CTYPE=en_US.UTF-8
 export LANG=en_GB.UTF-8
 
+# Editors
 export SVN_EDITOR="mate -wl1"
 export HGEDITOR="mate -wl1"
 export GIT_EDITOR="mate -wl1"
 export EDITOR='mate'
 
-export PYTHONPATH=/usr/local/lib/python2.6/site-packages
+# Fuck you python
+export PYTHONPATH="/usr/local/lib/python2.6/site-packages"
 
+# Fuck you make
 export MAKEFLAGS='-j4'
 
 # Twitter performance tweaks for REE
@@ -61,4 +29,5 @@ export RUBY_HEAP_SLOTS_INCREMENT=250000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=50000000
 
+# Coz I wanna be different, yeah?
 export SUDO_PROMPT="Sudo Password: "

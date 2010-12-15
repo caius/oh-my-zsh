@@ -133,6 +133,7 @@ alias time="$(whence -p time)"
 
 # bbcloud cli
 alias bb-accounts="brightbox-accounts"
+alias bb-acc="brightbox-accounts"
 alias bb-config="brightbox-config"
 alias bb-servers="brightbox-servers"
 alias bb-srvs="brightbox-servers"

@@ -145,5 +145,6 @@ alias bb-imgs="brightbox-images"
 alias bb-types="brightbox-types"
 alias bb-typs="brightbox-types"
 alias bb-zones="brightbox-zones"
+alias bb-lbs='brightbox-lbs'
 
 autoload zmv

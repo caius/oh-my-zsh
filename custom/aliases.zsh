@@ -35,7 +35,7 @@ alias ram='top -o rsize'
 # Encrypted disk images
 alias cl="open_and_cd_to_disk_image Clients"
 alias bb="open_and_cd_to_disk_image Brightbox && cd src"
-alias pp="open_and_cd_to_disk_image Projects"
+alias pp="open_and_cd_to_disk_image PizzaPowered && cd src"
 
 alias same='open .'
 

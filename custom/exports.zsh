@@ -1,5 +1,8 @@
 # make sure Homebrew s/bin comes first
-export PATH="/Users/caius/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
+PATH="/Users/caius/bin:/usr/local/Cellar/jruby/1.5.6/jruby/bin"
+PATH="$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
+export PATH
+
 # And the same for the manpath
 export MANPATH="/Users/caius/man:/usr/share/man:/usr/local/share/man:/usr/X11/man"
 

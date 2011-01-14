@@ -34,3 +34,6 @@ export RUBY_GC_MALLOC_LIMIT=50000000
 
 # Coz I wanna be different, yeah?
 export SUDO_PROMPT="Sudo Password: "
+
+# jumping on that there node bandwagon
+export NODE_PATH="/usr/local/lib/node"

@@ -141,7 +141,7 @@ function git {
 
   # git checkout
   # If you pass "-" as the branch name then it attempts to check out the previous
-  # branch you were on, using the contents of .git/previous_branch as the branch name.
+  # branch you were on, deducing that from the `git reflog`
   if [[ "$1" == "checkout" || "$1" == "co" ]]; then
     # Check if it's 'checkout -' or an actual branch name
     if [[ "$2" == "-" ]]; then
@@ -159,8 +159,8 @@ function git {
   fi
 
   # Run the command if we've been told to.
-  # The default is to run the command so this only
-  # fires if a check has disabled it.
+  # The default is to run the command so this 
+  # fires unless a check has disabled it.
   if [[ $CONTINUE == true ]]; then
     $GIT $*
   fi

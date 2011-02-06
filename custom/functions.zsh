@@ -187,3 +187,16 @@ function backup_phone_sms {
 function mman () {
   $(cd $HOME && "/Library/Application Support/TextMate/Bundles/Man Pages.tmbundle/Support/mman" $*)
 }
+
+# Easily grow the disk & update an ubuntu bbcloud server from scratch
+function setup_bbcloud_server () {
+  if [[ -z $1 ]]; then
+    echo "server identifier is required"
+  else
+    identifier=$1
+
+    ssh $identifier "sudo sh -c \"aptitude update && aptitude -y dist-upgrade && printf '1,,,\n;\n;\n;\n' | sfdisk --force -us -x /dev/vda; reboot\""
+    sleep 20
+    ssh $identifier "sudo resize2fs /dev/vda1"
+  fi
+}

@@ -101,6 +101,7 @@ alias igt='git'
 alias ti='git'
 alias tit='git'
 alias gits='git'
+alias guit="git"
 
 alias gitst='git st'
 alias gtst='git st'
@@ -146,5 +147,10 @@ alias bb-types="brightbox-types"
 alias bb-typs="brightbox-types"
 alias bb-zones="brightbox-zones"
 alias bb-lbs='brightbox-lbs'
+
+# ln -s /System/Library/Frameworks/JavascriptCore.framework/Versions/A/Resources/jsc ~/bin/
+alias javascript="jsc"
+
+alias csshx="csshX"
 
 autoload zmv

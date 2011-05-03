@@ -200,3 +200,13 @@ function setup_bbcloud_server () {
     ssh $identifier "sudo resize2fs /dev/vda1"
   fi
 }
+
+function quit_app () {
+  if [[ -z $1 ]]; then
+    echo "Application name is required"
+    exit(1)
+  fi
+
+  osascript -e 'tell app "'$1'" to quit'
+  echo "Told $1 to quit!"
+}

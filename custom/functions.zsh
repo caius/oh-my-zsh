@@ -149,7 +149,7 @@ function git {
       CONTINUE=false
 
       # Figure it out from the reflog
-      LAST_BRANCH=$(git log -g --oneline | egrep "moving from .*? to $(current_branch)" | head -n1 | awk '{ print $6 }')
+      LAST_BRANCH=$(git log -g --oneline | egrep "moving from .*? to ($(current_branch)|HEAD)" | head -n1 | awk '{ print $6 }')
       if [[ "$LAST_BRANCH" != "" ]]; then
         $GIT checkout $LAST_BRANCH
       else

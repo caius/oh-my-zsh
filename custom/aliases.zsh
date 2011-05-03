@@ -153,4 +153,7 @@ alias javascript="jsc"
 
 alias csshx="csshX"
 
+# Sodding java
+alias amq="$(brew --prefix activemq)/bin/activemq console xbean:$(brew --prefix activemq)/libexec/conf/activemq-stomp.xml"
+
 autoload zmv

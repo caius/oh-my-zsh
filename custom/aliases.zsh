@@ -109,6 +109,7 @@ alias gtst='git st'
 alias gme='gem'
 
 alias rkae='rake'
+alias bcb="bundle check || bundle"
 
 alias culerity='irb -rculerity-boot'
 alias celerity='jruby -S irb -rcelerity-boot'

@@ -1,0 +1,60 @@
+#!/usr/bin/env ruby
+
+Handlers = [
+  {
+    :match => "foo",
+    :handler => lambda {|mc| puts "Hi #{ENV["USER"]}!" }
+  },
+  {
+    :match => "debug",
+    :handler => lambda do |mc|
+      p mc.cmd, mc.args
+    end
+  },
+  {
+    :match => "get",
+    :handler => lambda do |mc|
+      exec("/usr/bin/curl", mc.args.first)
+    end
+  },
+  {
+    :match => /\A(\w+)-(accounts|acc|cloudips|cips|config|images|imgs|lbs|servers|srvs|types|typs|users|zones)\z/,
+    :handler => lambda do |mc|
+      _, acc_name, bb_cmd = mc.cmd.to_a
+      commands = {
+        "acc"  => "accounts",
+        "cips" => "cloudips",
+        "imgs" => "images",
+        "srvs" => "servers",
+        "typs" => "types"
+      }
+      if commands.keys.include? bb_cmd
+        bb_cmd = commands[bb_cmd]
+      end
+      exec "brightbox-#{bb_cmd}", "-c", acc_name, *mc.args
+    end
+  }
+]
+
+MissingCommand = Struct.new(:cmd, :args)
+
+def run_handler h, cmd, args
+  cmd = MissingCommand.new(cmd, args)
+  h[:handler].call(cmd)
+  exit(0)
+end
+
+Handlers.each do | h |
+  case h[:match]
+  when String
+    run_handler(h, ARGV.first, ARGV[1..-1]) if ARGV.first == h[:match]
+  when Regexp
+    if ARGV.first =~ h[:match]
+      run_handler(h, ARGV.first.match(h[:match]), ARGV[1..-1])
+    end
+  else
+    next
+  end
+end
+
+# exit(1)

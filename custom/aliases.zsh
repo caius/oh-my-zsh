@@ -12,6 +12,8 @@ alias eproduction='RAILS_ENV=production'
 alias eprod="eproduction"
 
 alias be="bundle exec"
+alias bes="bundle exec spec"
+alias ber="bundle exec rspec"
 
 alias rcap=$(whence -p cap)
 
@@ -34,8 +36,8 @@ alias ram='top -o rsize'
 
 # Encrypted disk images
 alias cl="open_and_cd_to_disk_image Clients"
-alias bb="open_and_cd_to_disk_image Brightbox && cd src"
-alias pp="open_and_cd_to_disk_image PizzaPowered && cd src"
+alias bb="cd ~/Brightbox/src"
+alias pp="cd ~/PizzaPowered/src"
 
 alias same='open .'
 
@@ -47,6 +49,7 @@ alias cdpath='cd "`pbpaste`"'
 ## Textmate alias'
 alias mate='/Users/caius/bin/mate -r'
 alias m='mate -r'
+alias ,='mate -r'
 alias matew='mate -rw'
 alias mw='mate -rw'
 alias m.='mate .'
@@ -129,6 +132,8 @@ alias port='nocorrect port'
 alias brew='nocorrect brew'
 alias iplayer="get_iplayer --isodate"
 alias scp="nocorrect scp"
+alias rspec="nocorrect rspec"
+alias spec="nocorrect spec"
 
 # Override ZSH's built ins
 alias time="$(whence -p time)"

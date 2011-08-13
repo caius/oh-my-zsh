@@ -18,9 +18,9 @@ function ss {
   fi
 
   if [[ -e "script/server" ]]; then
-    script/server $SERVER_ARGS
+    bundle exec script/server $SERVER_ARGS
   else
-    rails server $SERVER_ARGS
+    bundle exec rails server $SERVER_ARGS
   fi
 }
 

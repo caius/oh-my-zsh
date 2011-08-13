@@ -210,3 +210,8 @@ function quit_app () {
   osascript -e 'tell app "'$1'" to quit'
   echo "Told $1 to quit!"
 }
+
+# ZSH.method_missing
+function command_not_found_handler {
+  ~/bin/zsh_method_missing $*
+}

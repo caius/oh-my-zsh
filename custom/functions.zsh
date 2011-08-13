@@ -213,5 +213,5 @@ function quit_app () {
 
 # ZSH.method_missing
 function command_not_found_handler {
-  ~/bin/zsh_method_missing $*
+  ~/.oh-my-zsh/extras/zsh_method_missing $*
 }

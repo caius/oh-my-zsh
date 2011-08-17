@@ -107,6 +107,7 @@ function cap {
 # Adds various checks to `git` as detailed below:
 #  * Makes sure you've run your specs/features before pushing
 #  * Asks for confirmation before committing on master
+#  * Changes `git rebase .` into `git rebase origin/$current_branch`
 function git {
   GIT=$(whence -p git)
   CONTINUE=true
@@ -155,6 +156,18 @@ function git {
       else
         echo "I'm sorry $USER, I'm afraid I can't do that."
       fi
+    fi
+  fi
+
+  # git rebase
+  if [[ "$1" == "rebase" ]]; then
+    # Double check if we're trying to rebase "."
+    if [[ "$2" == "." ]]; then
+      # Don't run "git rebase ."
+      CONTINUE=false
+
+      # Run our actual git rebase
+      $GIT rebase origin/$(current_branch)
     fi
   fi
 
